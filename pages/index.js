@@ -103,7 +103,7 @@ export default function Home() {
             </div>
             <div className='embla__slide'>
               <h2>Slide 3</h2>
-              <video muted id="video3"  src="../video/3.mp4"></video>
+              <video muted id="video3"  src="../video/4.mp4"></video>
             </div>
             <div className='embla__slide'>
               <h2>Slide 4</h2>
