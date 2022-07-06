@@ -95,7 +95,7 @@ export default function Home() {
           <div className='embla__container'>
             <div className='embla__slide'>
               {/* <h2>Slide 1</h2> */}
-              <video muted id="video1"  src="../video/1.mp4"></video>
+              <video muted id="video1"  src="../video/1_1.mp4"></video>
             </div>
             <div className='embla__slide'>
               {/* <h2>Slide 2</h2> */}
@@ -111,7 +111,7 @@ export default function Home() {
             </div>
             <div className='embla__slide'>
               {/* <h2>Slide 5</h2> */}
-              <video muted id="video5"  src="../video/1.mp4"></video>
+              <video muted id="video5"  src="../video/1_1.mp4"></video>
             </div>
           </div>
         </div>
