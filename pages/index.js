@@ -19,6 +19,9 @@ export default function Home() {
     if (emblaApi) {
       document.querySelectorAll('video').forEach(vid => vid.pause());
       emblaApi.scrollPrev();
+      const slideNodes = parseInt(emblaApi.selectedScrollSnap()) + 1;
+      const currentVideo = document.getElementById(`video${slideNodes}`);
+      currentVideo.currentTime = 0;
     } 
   }, [emblaApi]);
 
@@ -26,6 +29,9 @@ export default function Home() {
     if (emblaApi) {
       document.querySelectorAll('video').forEach(vid => vid.pause());
       emblaApi.scrollNext();
+      const slideNodes = parseInt(emblaApi.selectedScrollSnap()) + 1;
+      const currentVideo = document.getElementById(`video${slideNodes}`);
+      currentVideo.currentTime = 0;
     } 
   }, [emblaApi]);
 
