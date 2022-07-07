@@ -19,7 +19,7 @@ export default function Home() {
     if (emblaApi) {
       document.querySelectorAll('video').forEach(vid => vid.pause());
       emblaApi.scrollPrev();
-      const slideNodes = parseInt(emblaApi.selectedScrollSnap()) + 1;
+      const slideNodes = parseInt(emblaApi.selectedScrollSnap() +  1);
       const currentVideo = document.getElementById(`video${slideNodes}`);
       currentVideo.currentTime = 0;
     } 
@@ -29,7 +29,7 @@ export default function Home() {
     if (emblaApi) {
       document.querySelectorAll('video').forEach(vid => vid.pause());
       emblaApi.scrollNext();
-      const slideNodes = parseInt(emblaApi.selectedScrollSnap()) + 1;
+      const slideNodes = parseInt(emblaApi.selectedScrollSnap());
       const currentVideo = document.getElementById(`video${slideNodes}`);
       currentVideo.currentTime = 0;
     } 
@@ -58,10 +58,10 @@ export default function Home() {
 
       const onPointerDown = () => {
         console.log(`touch start`);
-        document.querySelectorAll('video').forEach(vid => vid.pause());
-        const slideNodes = parseInt(emblaApi.selectedScrollSnap()) + 1;
-        const currentVideo = document.getElementById(`video${slideNodes}`);
-        currentVideo.currentTime = 0;
+        // document.querySelectorAll('video').forEach(vid => vid.pause());
+        // const slideNodes = parseInt(emblaApi.selectedScrollSnap()) + 1;
+        // const currentVideo = document.getElementById(`video${slideNodes}`);
+        // currentVideo.currentTime = 0;
       }
 
 
