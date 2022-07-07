@@ -12,7 +12,8 @@ export default function Home() {
     loop: true,
     skipSnaps: false,
     inViewThreshold: 0.1,
-    speed : '20'
+    speed : '20',
+    jump: true,
   });
 
   const scrollPrev = useCallback(() => {
@@ -57,30 +58,38 @@ export default function Home() {
       }
 
       const onPointerDown = () => {
-        console.log(`touch start`);
         // document.querySelectorAll('video').forEach(vid => vid.pause());
-        // const slideNodes = parseInt(emblaApi.selectedScrollSnap()) + 1;
-        // const currentVideo = document.getElementById(`video${slideNodes}`);
+        const slideNodes = parseInt(emblaApi.selectedScrollSnap()) + 1;
+        const currentVideo = document.getElementById(`video${slideNodes}`);
         // currentVideo.currentTime = 0;
       }
 
 
       const onSettle = (index) => {
-        console.log(`settled ${emblaApi.selectedScrollSnap()}`);
         const slideNodes = parseInt(emblaApi.selectedScrollSnap()) + 1;
-        console.log(slideNodes);
         const currentVideo = document.getElementById(`video${slideNodes}`);
         currentVideo.currentTime = 0;
         currentVideo.play();
+      }
 
-
-
+      const onSelect = (index) => {
+        const slideNodes = parseInt(emblaApi.selectedScrollSnap());
+        const currentVideo = document.getElementById(`video${slideNodes}`);
+        console.log( 'selected-video' , currentVideo);
+        if(currentVideo !== null) {
+          console.log('time set to 0')
+          currentVideo.currentTime = 0;
+          // currentVideo.play();
+        }
+        // currentVideo.currentTime = 0;
+        // currentVideo.play();
       }
 
       
       emblaApi.on('init', onInit) // Add event listener
       emblaApi.on('settle', onSettle) // Add event listener
       emblaApi.on('pointerDown', onPointerDown) // Add event listener
+      emblaApi.on('select', onSelect) // Add event listener
 
 
     }
