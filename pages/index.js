@@ -61,7 +61,7 @@ export default function Home() {
         const slideNodes = parseInt(emblaApi.selectedScrollSnap()) + 1;
         console.log(slideNodes);
         const currentVideo = document.getElementById(`video${slideNodes}`);
-        currentVideo.currentTime = 0;
+        // currentVideo.currentTime = 0;
         currentVideo.play();
 
 
