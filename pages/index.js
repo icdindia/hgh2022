@@ -68,7 +68,11 @@ export default function Home() {
       const onSettle = (index) => {
         const slideNodes = parseInt(emblaApi.selectedScrollSnap()) + 1;
         const currentVideo = document.getElementById(`video${slideNodes}`);
-        currentVideo.currentTime = 0;
+        if(currentVideo !== null) {
+          console.log('time set to 0')
+          currentVideo.currentTime = 0;
+          // currentVideo.play();
+        }
         currentVideo.play();
       }
 

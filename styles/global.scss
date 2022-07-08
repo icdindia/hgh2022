@@ -24,8 +24,9 @@ button{
     }
 
     &.prev-btn , &.next-btn{
-        top: 50%;
+        top: 40%;
         left: 0;
+        opacity: 0;
     }
 
     &.next-btn{
