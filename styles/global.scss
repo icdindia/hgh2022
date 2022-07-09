@@ -39,6 +39,15 @@ button{
     &.next-btn{
         left: auto;
         right: 0;
+
+        &.slide-3{
+            top: auto;
+            bottom: 10%;
+            // border: 1px solid;
+            // // opacity: 1;
+            // /* left: 80%; */
+            right: 28%;
+        }
     }
 }
 

@@ -43,6 +43,20 @@ export default function Home() {
     } 
   }, [emblaApi]);
 
+  const scrollNextSlide_3 = useCallback(() => {
+    if (emblaApi) {
+      document.querySelectorAll('video').forEach(vid => vid.pause());
+      emblaApi.scrollNext();
+      const slideNodes = parseInt(emblaApi.selectedScrollSnap()) + 1;
+      const currentVideo = document.getElementById(`video${slideNodes}`);
+     
+      if(currentVideo !== null) {
+        currentVideo.currentTime = 0;
+        // currentVideo.play();
+      }
+    } 
+  }, [emblaApi]);
+
   const scrollHome = useCallback(() => {
     if (emblaApi) {
       document.querySelectorAll('video').forEach(vid => vid.pause());
@@ -142,6 +156,7 @@ export default function Home() {
             <div className='embla__slide'>
               {/* <h2>Slide 3</h2> */}
               <video muted id="video3"  src="../video/3.mp4"></video>
+              <button type="button" className='next-btn slide-3' onClick={scrollNextSlide_3} />
             </div>
             <div className='embla__slide'>
               {/* <h2>Slide 4</h2> */}
