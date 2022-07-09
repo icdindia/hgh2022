@@ -4,6 +4,11 @@
     width: 100vh;
 }
 
+.embla__slide {
+    flex: 0 0 auto; 
+    max-width: 100%; 
+}
+
 body{
     overflow: hidden;
 }
@@ -14,6 +19,8 @@ body{
 
 button{
     position: absolute;
+    min-width: 11vw;
+    min-height: 15vw;
 
     &.home-btn{
         top: 0;
@@ -24,7 +31,7 @@ button{
     }
 
     &.prev-btn , &.next-btn{
-        top: 44%;
+        top: 43%;
         left: 0;
         opacity: 0;
     }

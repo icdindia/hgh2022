@@ -20,9 +20,12 @@ export default function Home() {
     if (emblaApi) {
       document.querySelectorAll('video').forEach(vid => vid.pause());
       emblaApi.scrollPrev();
-      const slideNodes = parseInt(emblaApi.selectedScrollSnap() +  1);
+      const slideNodes = parseInt(emblaApi.selectedScrollSnap()) + 1;
       const currentVideo = document.getElementById(`video${slideNodes}`);
-      currentVideo.currentTime = 0;
+      if(currentVideo !== null) {
+        currentVideo.currentTime = 0;
+        // currentVideo.play();
+      }
     } 
   }, [emblaApi]);
 
@@ -30,8 +33,9 @@ export default function Home() {
     if (emblaApi) {
       document.querySelectorAll('video').forEach(vid => vid.pause());
       emblaApi.scrollNext();
-      const slideNodes = parseInt(emblaApi.selectedScrollSnap());
+      const slideNodes = parseInt(emblaApi.selectedScrollSnap()) + 1;
       const currentVideo = document.getElementById(`video${slideNodes}`);
+      console.log(currentVideo)
       if(currentVideo !== null) {
         currentVideo.currentTime = 0;
         // currentVideo.play();
@@ -64,6 +68,7 @@ export default function Home() {
         // document.querySelectorAll('video').forEach(vid => vid.pause());
         const slideNodes = parseInt(emblaApi.selectedScrollSnap()) + 1;
         const currentVideo = document.getElementById(`video${slideNodes}`);
+        // console.log(currentVideo)
         // currentVideo.currentTime = 0;
       }
 
@@ -81,7 +86,6 @@ export default function Home() {
       const onSelect = (index) => {
         const slideNodes = parseInt(emblaApi.selectedScrollSnap());
         const currentVideo = document.getElementById(`video${slideNodes}`);
-        console.log( 'selected-video' , currentVideo);
         if(currentVideo !== null) {
           currentVideo.currentTime = 0;
           // currentVideo.play();
