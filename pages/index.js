@@ -9,7 +9,7 @@ export default function Home() {
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",
-    loop: false,
+    loop: true,
     skipSnaps: false,
     inViewThreshold: 0.1,
     speed : '20',
