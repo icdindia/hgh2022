@@ -32,7 +32,10 @@ export default function Home() {
       emblaApi.scrollNext();
       const slideNodes = parseInt(emblaApi.selectedScrollSnap());
       const currentVideo = document.getElementById(`video${slideNodes}`);
-      currentVideo.currentTime = 0;
+      if(currentVideo !== null) {
+        currentVideo.currentTime = 0;
+        // currentVideo.play();
+      }
     } 
   }, [emblaApi]);
 
@@ -69,7 +72,6 @@ export default function Home() {
         const slideNodes = parseInt(emblaApi.selectedScrollSnap()) + 1;
         const currentVideo = document.getElementById(`video${slideNodes}`);
         if(currentVideo !== null) {
-          console.log('time set to 0')
           currentVideo.currentTime = 0;
           // currentVideo.play();
         }
@@ -81,7 +83,6 @@ export default function Home() {
         const currentVideo = document.getElementById(`video${slideNodes}`);
         console.log( 'selected-video' , currentVideo);
         if(currentVideo !== null) {
-          console.log('time set to 0')
           currentVideo.currentTime = 0;
           // currentVideo.play();
         }
@@ -150,7 +151,7 @@ export default function Home() {
             </div>
             <div className='embla__slide'>
               {/* <h2>Slide 5</h2> */}
-              <video muted id="video8"  src="../video/8.mp4"></video>
+              <video muted id="video9"  src="../video/9.mp4"></video>
             </div>
             <div className='embla__slide'>
               {/* <h2>Slide 5</h2> */}
