@@ -46,6 +46,7 @@ export default function Home() {
   const scrollHome = useCallback(() => {
     if (emblaApi) {
       document.querySelectorAll('video').forEach(vid => vid.pause());
+      
       emblaApi.scrollTo('0', true);
       // emblaApi.reInit();
     } 
