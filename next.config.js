@@ -36,18 +36,18 @@ module.exports = withPWA({
 
 
 
-  // async headers() {
-  //   return [
-  //     {
-  //       source: '/_next/image(.*)',
-  //       locale: false,
-  //       headers: [
-  //         {
-  //           key: 'Cache-Control',
-  //           value: 'public, max-age=365d, must-revalidate',
-  //         }
-  //       ],
-  //     },
-  //   ]
-  // }, 
+  async headers() {
+    return [
+      {
+        source: '/_next/image(.*)',
+        locale: false,
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=365d, must-revalidate',
+          }
+        ],
+      },
+    ]
+  }, 
 });
