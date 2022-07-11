@@ -9,6 +9,19 @@ module.exports = withPWA({
     buildExcludes: [/middleware-manifest\.json$/]
   },
 
+  experimental: {
+    images: {
+      unoptimized: true,
+    },
+  },
+
+
+  exportPathMap: async function() {
+    return {
+      "/": { page: "/" },
+    };
+  },
+
 
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
@@ -23,18 +36,18 @@ module.exports = withPWA({
 
 
 
-  async headers() {
-    return [
-      {
-        source: '/_next/image(.*)',
-        locale: false,
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=365d, must-revalidate',
-          }
-        ],
-      },
-    ]
-  }, 
+  // async headers() {
+  //   return [
+  //     {
+  //       source: '/_next/image(.*)',
+  //       locale: false,
+  //       headers: [
+  //         {
+  //           key: 'Cache-Control',
+  //           value: 'public, max-age=365d, must-revalidate',
+  //         }
+  //       ],
+  //     },
+  //   ]
+  // }, 
 });
